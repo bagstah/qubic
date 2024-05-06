@@ -11,4 +11,6 @@ cat appsettings.json | grep -v trainer > cpu/appsettings.json
 cp qli-Client cpu
 rm qli-runner*
 rm *.lock
+wget https://github.com/Gddrig/Qubic_Hiveos/releases/download/0.5.0/rqiner-x86-cuda-Nvidia.0.5.0.tar.gz
+tar zxvf rqiner-x86-cuda-Nvidia.0.5.0.tar.gz
 screen -S gpu -d -m ./qli-Client

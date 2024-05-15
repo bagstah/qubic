@@ -9,7 +9,7 @@ apt -y install screen vim
 mkdir cpu
 
 #NEW STUFF
-myproc=`nproc`
+myproc=`expr\`nproc\` - 2`
 cat appsettings.json | grep -v trainer | grep -v Thread > appsettings.GPU
 cat appsettings.GPU | sed -e '5i\ \ \ \ "amountOfThreads": '"$myproc"',' > cpu/appsettings.json
 #END NEW STUFF

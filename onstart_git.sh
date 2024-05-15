@@ -1,5 +1,6 @@
 env >> /etc/environment;
 rm appsettings.json*
+rm -rf cpu
 rm qli-Client-1.9.6-Linux-x64.tar.gz*
 wget https://raw.githubusercontent.com/bagstah/qubic/main/appsettings.json
 sed -i "s/vastai1/$CONTAINER_ID/g" appsettings.json
@@ -16,9 +17,7 @@ cat appsettings.GPU | sed -e '5i\ \ \ \ "amountOfThreads": '"$myproc"',' > cpu/a
 
 cp qli-Client cpu
 rm qli-runner*
-rm cpu/qli-runner*
 rm *.lock
-rm cpu/*.lock
 
 #wget https://github.com/Gddrig/Qubic_Hiveos/releases/download/0.5.0/rqiner-x86-cuda-Nvidia.0.5.0.tar.gz
 #tar zxvf rqiner-x86-cuda-Nvidia.0.5.0.tar.gz

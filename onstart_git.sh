@@ -16,7 +16,11 @@ cat appsettings.GPU | sed -e '5i\ \ \ \ "amountOfThreads": '"$myproc"',' > cpu/a
 
 cp qli-Client cpu
 rm qli-runner*
+rm cpu/qli-runner*
 rm *.lock
+rm cpu/*.lock
+
 #wget https://github.com/Gddrig/Qubic_Hiveos/releases/download/0.5.0/rqiner-x86-cuda-Nvidia.0.5.0.tar.gz
 #tar zxvf rqiner-x86-cuda-Nvidia.0.5.0.tar.gz
 screen -S gpu -d -m ./qli-Client
+screen -S cpu -d -m bash -c 'cd cpu ; ./qli-Client'

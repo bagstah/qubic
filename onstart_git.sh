@@ -10,8 +10,8 @@ mkdir cpu
 
 #NEW STUFF
 myproc=`nproc`
-cat appsettings.json | grep -v trainer | grep -v thread > appsettings.GPU
-cat appsettings.GPU | sed -e '5i\ \ \ \ "amountOfThreads": "10",' > cpu/appsettings.json
+cat appsettings.json | grep -v trainer | grep -v Thread > appsettings.GPU
+cat appsettings.GPU | sed -e '5i\ \ \ \ "amountOfThreads": '"$myproc"',' > cpu/appsettings.json
 #END NEW STUFF
 
 cp qli-Client cpu
